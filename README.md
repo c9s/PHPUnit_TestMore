@@ -28,6 +28,16 @@ In your PHPUnit test case, you can:
         }
     }
 
+Output Result
+-------------
+
+    % phpunit 
+    TAP version 13
+    ok 1 - FooTest::test
+    ok 2 - FooTest::test2
+    ok 3 - FooTest::test3
+    1..3
+
 Methods
 -------
 - ok
