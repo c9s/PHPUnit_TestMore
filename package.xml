@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.10" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0                                 http://pear.php.net/dtd/tasks-1.0.xsd                                 http://pear.php.net/dtd/package-2.0                                 http://pear.php.net/dtd/package-2.0.xsd">
+  <name>PHPUnit_TestMore</name>
+  <channel>pear.corneltek.com</channel>
+  <summary>Let you define Test::More-like unit tests and base on the great PHPUnit testing framework</summary>
+  <description>Let you define Test::More-like unit tests and base on the great PHPUnit testing framework</description>
+  <lead>
+    <name>Yo-An Lin</name>
+    <user/>
+    <email>cornelius.howl@gmail.com</email>
+    <active>1</active>
+  </lead>
+  <date>2011-12-17</date>
+  <time>20:59:53</time>
+  <version>
+    <release>0.0.1</release>
+    <api>0.0.1</api>
+  </version>
+  <stability>
+    <release>stable</release>
+    <api>stable</api>
+  </stability>
+  <license>PHP LICENSE</license>
+  <notes>-</notes>
+  <contents>
+    <dir name="/">
+      <file install-as="bootstrap.php" name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
+      <file install-as="FooTest.php" name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
+      <file install-as="testmore_helpers.php" name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
+      <file install-as="README.md" name="README.md" role="doc" md5sum="24ae30c91801a0de95b821de2b4d9fa8"/>
+    </dir>
+  </contents>
+  <dependencies>
+    <required>
+      <php>
+        <min>5.3</min>
+      </php>
+      <pearinstaller>
+        <min>1.4</min>
+      </pearinstaller>
+    </required>
+  </dependencies>
+  <phprelease/>
+</package>
