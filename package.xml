@@ -11,7 +11,7 @@
     <active>1</active>
   </lead>
   <date>2011-12-17</date>
-  <time>20:59:53</time>
+  <time>21:00:35</time>
   <version>
     <release>0.0.1</release>
     <api>0.0.1</api>
@@ -24,6 +24,7 @@
   <notes>-</notes>
   <contents>
     <dir name="/">
+      <file install-as="PHPUnit_TestMore.php" name="src/PHPUnit_TestMore.php" role="php" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
       <file install-as="bootstrap.php" name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
       <file install-as="FooTest.php" name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
       <file install-as="testmore_helpers.php" name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
