@@ -11,7 +11,7 @@
     <active>1</active>
   </lead>
   <date>2011-12-25</date>
-  <time>16:19:42</time>
+  <time>17:45:42</time>
   <version>
     <release>0.0.1</release>
     <api>0.0.1</api>
@@ -24,10 +24,10 @@
   <notes>-</notes>
   <contents>
     <dir name="/">
-      <file install-as="bootstrap.php" name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
-      <file install-as="FooTest.php" name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
-      <file install-as="testmore_helpers.php" name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
-      <file install-as="PHPUnit_TestMore.php" name="src/PHPUnit_TestMore.php" role="php" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
+      <file name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
+      <file name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
+      <file name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
+      <file name="src/PHPUnit_TestMore.php" role="php" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
     </dir>
   </contents>
   <dependencies>
@@ -40,5 +40,12 @@
       </pearinstaller>
     </required>
   </dependencies>
-  <phprelease/>
+  <phprelease>
+    <filelist>
+      <install name="tests/bootstrap.php" as="bootstrap.php"/>
+      <install name="tests/FooTest.php" as="FooTest.php"/>
+      <install name="tests/testmore_helpers.php" as="testmore_helpers.php"/>
+      <install name="src/PHPUnit_TestMore.php" as="PHPUnit_TestMore.php"/>
+    </filelist>
+  </phprelease>
 </package>
