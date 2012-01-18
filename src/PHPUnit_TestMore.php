@@ -6,6 +6,10 @@
  * file that was distributed with this source code.
  */
 
+/* php 5.3.3 does not support this */
+if( ! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT') )
+    define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT' , null );
+
 function ok( $v , $msg = null )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
@@ -49,6 +53,13 @@ function count_ok( $expected,$v, $msg = null )
     $testobj->assertCount( $expected , $v , $msg );
 }
 
+function skip( $msg )
+{
+    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
+    $testobj = $stacks[1]['object'];
+    $testobj->markTestSkipped( $msg );
+}
+
 
 function like( $e, $v , $msg = null )
 {
@@ -83,5 +94,6 @@ function dump($e)
     var_dump($e);
     ob_flush();
 }
+
 
 
