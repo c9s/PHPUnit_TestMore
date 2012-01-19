@@ -78,6 +78,12 @@ function file_equals($e,$v,$msg = null)
     $testobj->assertFileEquals($e,$v,$msg);
 }
 
+function path_ok( $path , $msg = null ) {
+    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
+    $testobj = $stacks[1]['object'];
+    $testobj->assertFileExists($path , $msg );
+}
+
 function dump($e)
 {
     var_dump($e);
