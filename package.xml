@@ -10,8 +10,8 @@
     <email>cornelius.howl@gmail.com</email>
     <active>yes</active>
   </lead>
-  <date>2012-02-02</date>
-  <time>01:53:39</time>
+  <date>2012-02-06</date>
+  <time>01:20:08</time>
   <version>
     <release>0.0.2</release>
     <api>0.0.2</api>
@@ -27,7 +27,7 @@
       <file name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
       <file name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
       <file name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
-      <file name="src/PHPUnit_TestMore.php" role="php" md5sum="0b9e1fef28d344eaf598351a687644a4"/>
+      <file name="src/PHPUnit_TestMore.php" role="php" md5sum="9a97e187cac754ea52be2b954787c3b6"/>
     </dir>
   </contents>
   <dependencies>
