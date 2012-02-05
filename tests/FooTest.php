@@ -12,7 +12,9 @@ class FooTest extends PHPUnit_Framework_TestCase
 {
     function test() 
     {
-        ok(1);
+        $ret = ok(1);
+        var_dump( $ret ); 
+        
         ok(true);
         ok('string');
         not_ok(false);

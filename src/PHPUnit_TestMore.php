@@ -15,6 +15,7 @@ function ok( $v , $msg = null )
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertTrue( $v ? true : false , $msg );
+    return $v ? true : false;
 }
 
 function not_ok( $v , $msg = null )
@@ -22,6 +23,7 @@ function not_ok( $v , $msg = null )
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertFalse( $v ? true : false , $msg );
+    return $v ? true : false;
 }
 
 function is( $expected , $v , $msg = null )
@@ -29,6 +31,7 @@ function is( $expected , $v , $msg = null )
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertEquals( $expected , $v , $msg );
+    return $expected === $v ? true : false;
 }
 
 
