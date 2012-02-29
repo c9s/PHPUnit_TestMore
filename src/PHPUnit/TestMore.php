@@ -99,6 +99,12 @@ function file_ok( $path , $msg = null ) {
     $testobj->assertTrue( is_file( $path ) , $msg );
 }
 
+function class_ok( $val , $msg = null ) {
+    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
+    $testobj = $stacks[1]['object'];
+    $testobj->assertTrue( class_exists( $val ) , $msg );
+}
+
 function path_ok( $path , $msg = null ) {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     $testobj = $stacks[1]['object'];
