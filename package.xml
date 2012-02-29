@@ -11,10 +11,10 @@
     <active>yes</active>
   </lead>
   <date>2012-02-29</date>
-  <time>14:18:07</time>
+  <time>17:52:08</time>
   <version>
-    <release>1.0.4</release>
-    <api>1.0.4</api>
+    <release>1.0.5</release>
+    <api>1.0.5</api>
   </version>
   <stability>
     <release>stable</release>
@@ -26,7 +26,7 @@
     <dir name="/">
       <file name="tests/bootstrap.php" role="test" md5sum="a97035206a6c5ab34fcf21ab81a24758"/>
       <file name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
-      <file name="src/PHPUnit/TestMore.php" role="php" md5sum="4275b187b3dfed8427ce0c540e2eb68a"/>
+      <file name="src/PHPUnit/TestMore.php" role="php" md5sum="db422d5e6c7fbb2b68959d7c37f8bb28"/>
     </dir>
   </contents>
   <dependencies>
