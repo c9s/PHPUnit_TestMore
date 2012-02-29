@@ -11,10 +11,10 @@
     <active>yes</active>
   </lead>
   <date>2012-02-29</date>
-  <time>14:12:00</time>
+  <time>14:18:07</time>
   <version>
-    <release>1.0.3</release>
-    <api>1.0.3</api>
+    <release>1.0.4</release>
+    <api>1.0.4</api>
   </version>
   <stability>
     <release>stable</release>
@@ -24,10 +24,9 @@
   <notes>-</notes>
   <contents>
     <dir name="/">
-      <file name="tests/bootstrap.php" role="test" md5sum="5f0cad8f70446b24e8aa42f512e1296b"/>
+      <file name="tests/bootstrap.php" role="test" md5sum="a97035206a6c5ab34fcf21ab81a24758"/>
       <file name="tests/FooTest.php" role="test" md5sum="404bdd71b45cbda68badd1d6438e531e"/>
-      <file name="tests/testmore_helpers.php" role="test" md5sum="17a9a581e95dd367d363406fc84bc92f"/>
-      <file name="src/PHPUnit_TestMore.php" role="php" md5sum="b5e0733acd23bf976409fbe22191062f"/>
+      <file name="src/PHPUnit/TestMore.php" role="php" md5sum="4275b187b3dfed8427ce0c540e2eb68a"/>
     </dir>
   </contents>
   <dependencies>
@@ -44,8 +43,7 @@
     <filelist>
       <install name="tests/bootstrap.php" as="bootstrap.php"/>
       <install name="tests/FooTest.php" as="FooTest.php"/>
-      <install name="tests/testmore_helpers.php" as="testmore_helpers.php"/>
-      <install name="src/PHPUnit_TestMore.php" as="PHPUnit_TestMore.php"/>
+      <install name="src/PHPUnit/TestMore.php" as="PHPUnit/TestMore.php"/>
     </filelist>
   </phprelease>
 </package>
