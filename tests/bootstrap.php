@@ -1,2 +1,2 @@
 <?php
-require 'tests/testmore_helpers.php';
+require 'src/PHPUnit/TestMore.php';
