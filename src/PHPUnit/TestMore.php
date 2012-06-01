@@ -49,11 +49,25 @@ function is_class( $expected , $v , $msg = null )
     $testobj->assertInstanceOf( $expected , $v , $msg );
 }
 
-function count_ok( $expected,$v, $msg = null ) 
+function count_ok( $expected, $v, $msg = null ) 
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertCount( $expected , $v , $msg );
+}
+
+function select_ok( $selected , $expected , $xml )
+{
+    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
+    $dom = null;
+    if( is_string($xml) ) {
+        $dom = new DOMDocument;
+        $dom->loadXML($xml);
+    } else {
+        $dom = $xml;
+    }
+    $testobj = $stacks[1]['object'];
+    $testobj->assertSelectCount( $selected , $expected , $dom );
 }
 
 function skip( $msg )
