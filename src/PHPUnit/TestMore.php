@@ -141,10 +141,58 @@ function dir_ok($path, $msg = null)
     $test->assertTrue( is_dir($path) , "Path $path is a directory." );
 }
 
+function same_ok($e,$v) 
+{
+    $test = get_testcase_object();
+    $test->assertSame($e,$v);
+}
+
+function null_ok($e)
+{
+    $test = get_testcase_object();
+    $test->assertNull($e);
+}
+
+
+/**
+ * Assert object has an attribute
+ *
+ */
+function object_attribute_ok($o,$attributeName)
+{
+    $test = get_testcase_object();
+    $test->assertNotNull($o, "object " . get_class($o) . " is not empty");
+    $test->assertObjectHasAttribute($attributeName, $o);
+}
+
+function is_empty($e,$msg = null)
+{
+    $test = get_testcase_object();
+    $test->assertEmpty($e,$msg);
+}
+
+function array_key_ok($array,$key,$msg = null)
+{
+    $test = get_testcase_object();
+    $test->assertArrayHasKey($key,$array, $msg);
+}
+
+
+/**
+ * Assert html tags
+ */
+function tag_ok($matcher,$actual, $message = '',$isHtml = true)
+{
+    $test = get_testcase_object();
+    $test->assertTag($matcher,$actual, $message, $isHtml);
+}
+
+
 function dump($e)
 {
     var_dump($e);
     ob_flush();
 }
+
 
 
