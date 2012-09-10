@@ -10,27 +10,36 @@
 if( ! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT') )
     define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT' , true );
 
+
+function get_testcase_object() 
+{
+    $objs = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
+    foreach($objs as $o) {
+        if ( array_key_exists('object', $o) && $o['object'] instanceof PHPUnit_Framework_TestCase ) {
+            return $o['object'];
+        }
+    }
+    return NULL;
+}
+
 function ok( $v , $msg = null )
 {
-    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
-    $testobj = $stacks[1]['object'];
-    $testobj->assertTrue( $v ? true : false , $msg );
+    $test = get_testcase_object();
+    $test->assertTrue( $v ? true : false , $msg );
     return $v ? true : false;
 }
 
 function not_ok( $v , $msg = null )
 {
-    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
-    $testobj = $stacks[1]['object'];
-    $testobj->assertFalse( $v ? true : false , $msg );
+    $test = get_testcase_object();
+    $test->assertFalse( $v ? true : false , $msg );
     return $v ? true : false;
 }
 
 function is( $expected , $v , $msg = null )
 {
-    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
-    $testobj = $stacks[1]['object'];
-    $testobj->assertEquals( $expected , $v , $msg );
+    $test = get_testcase_object();
+    $test->assertEquals( $expected , $v , $msg );
     return $expected === $v ? true : false;
 }
 
@@ -113,16 +122,24 @@ function file_ok( $path , $msg = null ) {
     $testobj->assertTrue( is_file( $path ) , $msg );
 }
 
-function class_ok( $val , $msg = null ) {
+function class_ok( $val , $msg = null ) 
+{
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     $testobj = $stacks[1]['object'];
     $testobj->assertTrue( class_exists( $val ) , $msg );
 }
 
-function path_ok( $path , $msg = null ) {
-    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
-    $testobj = $stacks[1]['object'];
-    $testobj->assertFileExists($path , $msg );
+function path_ok( $path , $msg = null ) 
+{
+    $test = get_testcase_object();
+    $test->assertFileExists($path , $msg );
+}
+
+function dir_ok($path, $msg = null)
+{
+    $test = get_testcase_object();
+    $test->assertFileExists($path , $msg , "Directory $path exists." );
+    $test->assertTrue( is_dir($path) , "Path $path is a directory." );
 }
 
 function dump($e)
@@ -130,6 +147,5 @@ function dump($e)
     var_dump($e);
     ob_flush();
 }
-
 
 
