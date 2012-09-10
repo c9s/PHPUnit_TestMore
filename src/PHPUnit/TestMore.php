@@ -124,9 +124,8 @@ function file_ok( $path , $msg = null ) {
 
 function class_ok( $val , $msg = null ) 
 {
-    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
-    $testobj = $stacks[1]['object'];
-    $testobj->assertTrue( class_exists( $val ) , $msg );
+    $test = get_testcase_object();
+    $test->assertTrue( class_exists( $val ) , $msg ? $msg : "Class $val exists");
 }
 
 function path_ok( $path , $msg = null ) 
