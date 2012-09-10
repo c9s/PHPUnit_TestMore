@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.10" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0        http://pear.php.net/dtd/tasks-1.0.xsd        http://pear.php.net/dtd/package-2.0        http://pear.php.net/dtd/package-2.0.xsd">
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.10" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0               http://pear.php.net/dtd/tasks-1.0.xsd               http://pear.php.net/dtd/package-2.0               http://pear.php.net/dtd/package-2.0.xsd">
   <name>PHPUnit_TestMore</name>
   <channel>pear.corneltek.com</channel>
   <summary>Let you define Test::More-like unit tests and base on the great PHPUnit testing framework</summary>
@@ -10,11 +10,11 @@
     <email>cornelius.howl@gmail.com</email>
     <active>yes</active>
   </lead>
-  <date>2012-06-01</date>
-  <time>12:40:21</time>
+  <date>2012-09-10</date>
+  <time>09:40:02</time>
   <version>
-    <release>1.1.0</release>
-    <api>1.1.0</api>
+    <release>1.2.0</release>
+    <api>1.2.0</api>
   </version>
   <stability>
     <release>stable</release>
@@ -26,7 +26,7 @@
     <dir name="/">
       <file name="tests/bootstrap.php" role="test" md5sum="a97035206a6c5ab34fcf21ab81a24758"/>
       <file name="tests/FooTest.php" role="test" md5sum="f1f4dfc7c61e83bd1d6523d47bebdfb2"/>
-      <file name="src/PHPUnit/TestMore.php" role="php" md5sum="ba71155be0705968c0d28d00341c485d"/>
+      <file name="src/PHPUnit/TestMore.php" role="php" md5sum="bbe03f3c639373a55e7ca4abd3b772d4"/>
     </dir>
   </contents>
   <dependencies>
