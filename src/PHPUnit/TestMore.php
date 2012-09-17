@@ -15,7 +15,7 @@ function get_testcase_object()
 {
     $objs = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     foreach($objs as $o) {
-        if ( array_key_exists('object', $o) && $o['object'] instanceof PHPUnit_Framework_TestCase ) {
+        if ( isset($o['object']) && $o['object'] instanceof PHPUnit_Framework_TestCase ) {
             return $o['object'];
         }
     }
