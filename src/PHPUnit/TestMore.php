@@ -86,6 +86,12 @@ function skip( $msg )
     $testobj->markTestSkipped( $msg );
 }
 
+function contains_ok($e,$v, $msg = null)
+{
+    $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
+    $testobj = $stacks[1]['object'];
+    $testobj->assertContains($e,$v,$msg);
+}
 
 function like( $e, $v , $msg = null )
 {
