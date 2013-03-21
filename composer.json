@@ -1,0 +1,9 @@
+{
+    "name": "corneltek/phpunit-testmore",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": ["src/PHPUnit/TestMore.php"]
+    }
+}
