@@ -5,7 +5,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @VERSION 1.3.0
+ * @VERSION 1.3.1
  */
 
 /* php 5.3.3 does not support this */
