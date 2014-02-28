@@ -147,6 +147,12 @@ function dir_ok($path, $msg = null)
     $test->assertTrue( is_dir($path) , "Path $path is a directory." );
 }
 
+function same($e,$v) 
+{
+    $test = get_testcase_object();
+    $test->assertSame($e,$v);
+}
+
 function same_ok($e,$v) 
 {
     $test = get_testcase_object();
