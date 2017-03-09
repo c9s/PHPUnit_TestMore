@@ -8,7 +8,9 @@
  * file that was distributed with this source code.
  *
  */
-class FooTest extends PHPUnit_Framework_TestCase 
+use PHPUnit\Framework\TestCase;
+
+class FooTest extends TestCase
 {
     function test() 
     {
@@ -28,12 +30,5 @@ class FooTest extends PHPUnit_Framework_TestCase
     {
         count_ok( 3 , array( 1,2,3 ) );
     }
-
-    function testSelectCount()
-    {
-        $xml = '<foo><bar/></foo>';
-        select_ok( 'foo bar' , true , $xml );
-    }
-
 }
 
