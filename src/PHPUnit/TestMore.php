@@ -8,16 +8,22 @@
  * @VERSION 1.3.1
  */
 
-/* php 5.3.3 does not support this */
-if( ! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT') )
-    define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT' , true );
 
+// php 5.3.3 does not support this
+if (! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT')) {
+    define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT', true);
+}
+
+use PHPUnit\Framework\TestCase;
 
 function get_testcase_object() 
 {
     $objs = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     foreach($objs as $o) {
-        if ( isset($o['object']) && $o['object'] instanceof PHPUnit_Framework_TestCase ) {
+        if ( isset($o['object']) 
+            && ($o['object'] instanceof PHPUnit_Framework_TestCase
+            ||  $o['object'] instanceof TestCase) )
+        {
             return $o['object'];
         }
     }
