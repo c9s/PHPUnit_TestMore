@@ -30,21 +30,21 @@ function get_testcase_object()
     return NULL;
 }
 
-function ok( $v , $msg = null )
+function ok( $v , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertTrue( $v ? true : false , $msg );
     return $v ? true : false;
 }
 
-function not_ok( $v , $msg = null )
+function not_ok( $v , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertFalse( $v ? true : false , $msg );
     return $v ? true : false;
 }
 
-function is( $expected , $v , $msg = null )
+function is( $expected , $v , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertEquals( $expected , $v , $msg );
@@ -52,21 +52,21 @@ function is( $expected , $v , $msg = null )
 }
 
 
-function isa_ok( $expected , $v , $msg = null )
+function isa_ok( $expected , $v , $msg = '' )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertInstanceOf( $expected , $v , $msg );
 }
 
-function is_class( $expected , $v , $msg = null )
+function is_class( $expected , $v , $msg = '' )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertInstanceOf( $expected , $v , $msg );
 }
 
-function count_ok( $expected, $v, $msg = null ) 
+function count_ok( $expected, $v, $msg = '' )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
@@ -94,21 +94,21 @@ function skip( $msg )
     $testobj->markTestSkipped( $msg );
 }
 
-function contains_ok($e,$v, $msg = null)
+function contains_ok($e,$v, $msg = '')
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertContains($e,$v,$msg);
 }
 
-function like( $e, $v , $msg = null )
+function like( $e, $v , $msg = '' )
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
     $testobj->assertRegExp($e,$v,$msg);
 }
 
-function is_true($e,$v,$msg = null)
+function is_true($e,$v,$msg = '')
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT ); 
     $testobj = $stacks[1]['object'];
@@ -122,33 +122,33 @@ function is_false($e,$v,$msg= null)
     $testobj->assertFalse($e,$v,$msg);
 }
 
-function file_equals($e,$v,$msg = null)
+function file_equals($e,$v,$msg = '')
 {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     $testobj = $stacks[1]['object'];
     $testobj->assertFileEquals($e,$v,$msg);
 }
 
-function file_ok( $path , $msg = null ) {
+function file_ok( $path , $msg = '' ) {
     $stacks = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
     $testobj = $stacks[1]['object'];
     $testobj->assertFileExists($path , $msg );
     $testobj->assertTrue( is_file( $path ) , $msg );
 }
 
-function class_ok( $val , $msg = null ) 
+function class_ok( $val , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertTrue( class_exists( $val ) , $msg ? $msg : "Class $val exists");
 }
 
-function path_ok( $path , $msg = null ) 
+function path_ok( $path , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertFileExists($path , $msg );
 }
 
-function dir_ok($path, $msg = null)
+function dir_ok($path, $msg = '')
 {
     $test = get_testcase_object();
     $test->assertFileExists($path , $msg , "Directory $path exists." );
@@ -185,13 +185,13 @@ function object_attribute_ok($o,$attributeName)
     $test->assertObjectHasAttribute($attributeName, $o);
 }
 
-function is_empty($e,$msg = null)
+function is_empty($e,$msg = '')
 {
     $test = get_testcase_object();
     $test->assertEmpty($e,$msg);
 }
 
-function array_key_ok($array,$key,$msg = null)
+function array_key_ok($array,$key,$msg = '')
 {
     $test = get_testcase_object();
     $test->assertArrayHasKey($key,$array, $msg);
