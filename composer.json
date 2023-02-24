@@ -1,7 +1,7 @@
 {
     "name": "corneltek\/phpunit-testmore",
     "require": {
-        "php": ">=7.2.0"
+        "php": ">=8.2.3"
     },
     "autoload": {
         "files": [

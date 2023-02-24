@@ -28,7 +28,7 @@ class FooTest extends TestCase
 
     function test3()
     {
-        count_ok( 3 , array( 1,2,3 ) );
+        count_ok( 3 , [1, 2, 3] );
     }
 }
 
