@@ -5,11 +5,9 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @VERSION 1.3.1
+ * @VERSION 1.3.2
  */
 
-
-// php 5.3.3 does not support this
 if (! defined('DEBUG_BACKTRACE_PROVIDE_OBJECT')) {
     define( 'DEBUG_BACKTRACE_PROVIDE_OBJECT', true);
 }
@@ -19,36 +17,37 @@ use PHPUnit\Framework\TestCase;
 function get_testcase_object() 
 {
     $objs = debug_backtrace( DEBUG_BACKTRACE_PROVIDE_OBJECT );
-    foreach($objs as $o) {
-        if ( isset($o['object']) 
-            && ($o['object'] instanceof PHPUnit_Framework_TestCase
-            ||  $o['object'] instanceof TestCase) )
+    foreach($objs as $obj) {
+        if ( isset($obj['object']) 
+            && ($obj['object'] instanceof PHPUnit_Framework_TestCase
+            ||  $obj['object'] instanceof TestCase) )
         {
-            return $o['object'];
+            return $obj['object'];
         }
     }
+
     return NULL;
 }
 
 function ok( $v , $msg = '' )
 {
     $test = get_testcase_object();
-    $test->assertTrue( $v ? true : false , $msg );
-    return $v ? true : false;
+    $test->assertTrue( (bool) $v , $msg );
+    return (bool) $v;
 }
 
 function not_ok( $v , $msg = '' )
 {
     $test = get_testcase_object();
-    $test->assertFalse( $v ? true : false , $msg );
-    return $v ? true : false;
+    $test->assertFalse( (bool) $v , $msg );
+    return (bool) $v;
 }
 
 function is( $expected , $v , $msg = '' )
 {
     $test = get_testcase_object();
     $test->assertEquals( $expected , $v , $msg );
-    return $expected === $v ? true : false;
+    return $expected === $v;
 }
 
 
@@ -83,6 +82,7 @@ function select_ok( $selected , $expected , $xml )
     } else {
         $dom = $xml;
     }
+
     $testobj = $stacks[1]['object'];
     $testobj->assertSelectCount( $selected , $expected , $dom );
 }
@@ -139,7 +139,7 @@ function file_ok( $path , $msg = '' ) {
 function class_ok( $val , $msg = '' )
 {
     $test = get_testcase_object();
-    $test->assertTrue( class_exists( $val ) , $msg ? $msg : "Class $val exists");
+    $test->assertTrue( class_exists( $val ) , $msg ?: sprintf('Class %s exists', $val));
 }
 
 function path_ok( $path , $msg = '' )
@@ -151,8 +151,8 @@ function path_ok( $path , $msg = '' )
 function dir_ok($path, $msg = '')
 {
     $test = get_testcase_object();
-    $test->assertFileExists($path , $msg , "Directory $path exists." );
-    $test->assertTrue( is_dir($path) , "Path $path is a directory." );
+    $test->assertFileExists($path , $msg , sprintf('Directory %s exists.', $path) );
+    $test->assertTrue( is_dir($path) , sprintf('Path %s is a directory.', $path) );
 }
 
 function same($e,$v) 
@@ -181,7 +181,7 @@ function null_ok($e)
 function object_attribute_ok($o,$attributeName)
 {
     $test = get_testcase_object();
-    $test->assertNotNull($o, "object " . get_class($o) . " is not empty");
+    $test->assertNotNull($o, "object " . $o::class . " is not empty");
     $test->assertObjectHasAttribute($attributeName, $o);
 }
 
