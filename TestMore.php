@@ -181,7 +181,7 @@ function null_ok($e)
 function object_attribute_ok($o,$attributeName)
 {
     $test = get_testcase_object();
-    $test->assertNotNull($o, "object " . $o::class . " is not empty");
+    $test->assertNotNull($o, "object " . get_class($o) . " is not empty");
     $test->assertObjectHasAttribute($attributeName, $o);
 }
 
